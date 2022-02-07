@@ -1,0 +1,44 @@
+﻿@using PagedList
+@using PagedList.Mvc
+
+@model IPagedList<shop123.Models.spu>
+
+@{
+    ViewBag.Title = "IndexTest";
+}
+
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+<style>
+    .pagination-container {
+        text-align: center;
+    }
+</style>
+
+
+
+
+<div class="row d-flex justify-content-center">
+
+    @{
+        foreach (var item in Model)
+        {
+            <div class="card-deck col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3">
+                <div class="card card ">
+                    <img src="@item.spuImg1" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.spuName</h5>
+                        <p class="card-text">@item.spuPrice</p>
+                        <div class=" d-flex justify-content-between">
+                            <button class="btn shadow-none" style="outline:0;"><i class="far fa-heart"></i></button>
+                            <button class="btn shadow-none" style="outline:0;"><i class="fas fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        }
+    }
+</div>
+
+
+@Html.PagedListPager(Model, page => Url.Action("Allspu", new { page }))
