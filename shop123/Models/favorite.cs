@@ -12,13 +12,10 @@ namespace shop123.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class cart
+    public partial class favorite
     {
         public int id { get; set; }
-        public int memberId { get; set; }
         public int spuId { get; set; }
-        public int num { get; set; }
-        public int totalPrice { get; set; }
-        public bool paid { get; set; }
+        public int memberId { get; set; }
     }
 }

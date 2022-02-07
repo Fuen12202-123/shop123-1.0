@@ -1,7 +1,7 @@
 ﻿@model shop123.ViewModel.HomeViewModel
 
 @{
-    ViewBag.Title = "首頁";
+  ;
 }
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
@@ -27,47 +27,31 @@
 
 
 <div class="row">
-    <div class="col-md-12">        
-            <h5>最新上架商品 </h5>
-        </div>
+    <div class="col-md-12">
+        <h5>最新上架商品 </h5>
     </div>
+</div>
 
 <div class="row d-flex justify-content-center">
 
     @{
         foreach (var item in Model.spu.Take(40))
         {
-
-            <div class="card-deck col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3">
-                <div class="card card ">
-                    <img src="@item.spuImg1" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">@item.spuName</h5>
-                        <p class="card-text">@item.spuPrice</p>
-                        <div class=" d-flex justify-content-between">
-                            <button class="btn shadow-none" style="outline:0;"><i class="far fa-heart"></i></button>
-                            <button class="btn shadow-none" style="outline:0;"><i class="fas fa-cart-plus"></i></button>
-                        </div>
-                    </div>
-                   
-                </div>                
+        <div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3" style="border:0px">
+            <div class="card pb-3">
+                <a class="text-dark text-decoration-none" href="@Url.Action("Detail")?id=@item.id"> <img src="@item.spuImg1" class="card-img-top" alt="..."></a>
+                <div class="pl-3">
+                    <a class="text-dark text-decoration-none" href="@Url.Action("Detail")?id=@item.id"><p class="card-title">@item.spuName</p></a>
+                </div>
+                <div class="card-footer d-flex justify-content-between" style="height: 45px; background-color: white;border-top:0px">
+                    <p class="card-text">@item.spuPrice</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between" style="height:45px;background-color:white;border-top:0px">
+                    <button class="btn shadow-none" style="outline:0;"><i class="far fa-heart"></i></button>
+                    <button class="btn shadow-none" style="outline:0;"><i class="fas fa-cart-plus"></i></button>
+                </div>
             </div>
-            @*<div class="box col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 " style="margin-bottom:8px" id="spu">
-                    <div class="thumbnail" style="width: 100%; ">
-                        <img class="img-responsive" title="Click to View Product detail" style="cursor:pointer; width:100%; height:100%;"
-                             src="@item.spuImg1" />
-                        <div class="caption " style="height:40px">
-                            <h5>@item.spuName</h5>
-                        </div>
-                        <div class="caption">
-                            <p>@item.spuPrice</p>
-                        </div>
-                        <div class="caption d-flex justify-content-between">
-                            <button class="btn shadow-none" style="outline:0;"><i class="far fa-heart"></i></button>
-                            <button class="btn shadow-none" style="outline:0;"><i class="fas fa-cart-plus"></i></button>
-                        </div>
-                    </div>
-                </div>*@
+        </div>
         }
     }
 </div>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="shop123Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="shop123Model1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="carousel">
     <Key>
       <PropertyRef Name="id" />
@@ -44,6 +44,58 @@
     <Property Name="deliveryType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="DeliveryState" Type="Int32" Nullable="false" />
   </EntityType>
+  <EntityType Name="favorite">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="spuId" Type="Int32" Nullable="false" />
+    <Property Name="memberId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="member">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="memberAccount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="memberPassword" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="memberName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="memberPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="memberEmail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="memberImg" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="memberBanned" Type="Boolean" />
+    <Property Name="memberAccess" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="memberCreateTime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="orders">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="memberId" Type="Int32" Nullable="false" />
+    <Property Name="deliveryId" Type="Int32" Nullable="false" />
+    <Property Name="orderCreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="orderPaymentTime" Type="DateTime" Precision="3" />
+    <Property Name="receiverName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="receiverAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="receiverEmail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="receiverPhone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="orderState" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="totalPrice" Type="Int32" Nullable="false" />
+    <Property Name="refundId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ordersDetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="orderId" Type="Int32" />
+    <Property Name="skuId" Type="Int32" Nullable="false" />
+    <Property Name="orderDetailsize" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="orderDetailcolor" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="orderDetailnum" Type="Int32" Nullable="false" />
+    <Property Name="orderDetailprice" Type="Int32" Nullable="false" />
+  </EntityType>
   <EntityType Name="refund">
     <Key>
       <PropertyRef Name="id" />
@@ -84,70 +136,18 @@
     <Property Name="spuCreatedTime" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="spuEditTime" Type="DateTime" Nullable="false" Precision="3" />
   </EntityType>
-  <EntityContainer Name="shop123Entities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="shop123Entities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="carousel" EntityType="Self.carousel" />
     <EntitySet Name="catalogA" EntityType="Self.catalogA" />
     <EntitySet Name="catalogB" EntityType="Self.catalogB" />
     <EntitySet Name="comment" EntityType="Self.comment" />
     <EntitySet Name="delivery" EntityType="Self.delivery" />
+    <EntitySet Name="favorite" EntityType="Self.favorite" />
+    <EntitySet Name="member" EntityType="Self.member" />
+    <EntitySet Name="orders" EntityType="Self.orders" />
+    <EntitySet Name="ordersDetail" EntityType="Self.ordersDetail" />
     <EntitySet Name="refund" EntityType="Self.refund" />
     <EntitySet Name="sku" EntityType="Self.sku" />
     <EntitySet Name="spu" EntityType="Self.spu" />
-    <EntitySet Name="favorite" EntityType="shop123Model.favorite" />
-    <EntitySet Name="orders" EntityType="shop123Model.orders" />
-    <EntitySet Name="ordersDetail" EntityType="shop123Model.ordersDetail" />
-    <EntitySet Name="member" EntityType="shop123Model.member" />
   </EntityContainer>
-  <EntityType Name="favorite">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="spuId" Type="Int32" Nullable="false" />
-    <Property Name="memberId" Type="Int32" Nullable="false" />
-  </EntityType>
-  <EntityType Name="orders">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="memberId" Type="Int32" Nullable="false" />
-    <Property Name="deliveryId" Type="Int32" Nullable="false" />
-    <Property Name="orderCreateTime" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="orderPaymentTime" Type="DateTime" Precision="3" />
-    <Property Name="receiverName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="receiverAddress" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="receiverEmail" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="receiverPhone" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="orderState" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="totalPrice" Type="Int32" Nullable="false" />
-    <Property Name="refundId" Type="Int32" />
-  </EntityType>
-  <EntityType Name="ordersDetail">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="orderId" Type="Int32" />
-    <Property Name="skuId" Type="Int32" Nullable="false" />
-    <Property Name="orderDetailsize" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="orderDetailcolor" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="orderDetailnum" Type="Int32" Nullable="false" />
-    <Property Name="orderDetailprice" Type="Int32" Nullable="false" />
-  </EntityType>
-  <EntityType Name="member">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="memberAccount" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="memberPassword" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="memberName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="memberPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="memberEmail" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="memberImg" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="memberBanned" Type="Boolean" />
-    <Property Name="memberAccess" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="memberCreateTime" Type="DateTime" Nullable="false" Precision="3" />
-  </EntityType>
 </Schema>

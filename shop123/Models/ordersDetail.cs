@@ -12,10 +12,10 @@ namespace shop123.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class orderDetail
+    public partial class ordersDetail
     {
         public int id { get; set; }
-        public int orderId { get; set; }
+        public Nullable<int> orderId { get; set; }
         public int skuId { get; set; }
         public string orderDetailsize { get; set; }
         public string orderDetailcolor { get; set; }

@@ -124,6 +124,7 @@
     <Content Include="Content\Style.css" />
     <Content Include="Global.asax" />
     <Content Include="Images\logo.png" />
+    <Content Include="Images\minus_plus.gif" />
     <Content Include="Models\shop123.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>shop123.Context.cs</LastGenOutput>
@@ -171,9 +172,6 @@
     <Compile Include="Models\carousel.cs">
       <DependentUpon>shop123.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\cart.cs">
-      <DependentUpon>shop123.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\catalogA.cs">
       <DependentUpon>shop123.tt</DependentUpon>
     </Compile>
@@ -187,16 +185,16 @@
       <DependentUpon>shop123.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EnrollModel.cs" />
-    <Compile Include="Models\like.cs">
+    <Compile Include="Models\favorite.cs">
       <DependentUpon>shop123.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\member.cs">
       <DependentUpon>shop123.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\order.cs">
+    <Compile Include="Models\orders.cs">
       <DependentUpon>shop123.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\orderDetail.cs">
+    <Compile Include="Models\ordersDetail.cs">
       <DependentUpon>shop123.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\refund.cs">

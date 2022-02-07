@@ -12,7 +12,7 @@ namespace shop123.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class order
+    public partial class orders
     {
         public int id { get; set; }
         public int memberId { get; set; }
@@ -24,7 +24,7 @@ namespace shop123.Models
         public string receiverEmail { get; set; }
         public string receiverPhone { get; set; }
         public string orderState { get; set; }
-        public Nullable<int> refundId { get; set; }
         public int totalPrice { get; set; }
+        public Nullable<int> refundId { get; set; }
     }
 }

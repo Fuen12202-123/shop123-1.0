@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="shop123ModelStoreContainer" CdmEntityContainer="shop123Entities">
+  <EntityContainerMapping StorageEntityContainer="shop123Model1StoreContainer" CdmEntityContainer="shop123Entities1">
     <EntitySetMapping Name="carousel">
-      <EntityTypeMapping TypeName="shop123Model.carousel">
+      <EntityTypeMapping TypeName="shop123Model1.carousel">
         <MappingFragment StoreEntitySet="carousel">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="catalogAId" ColumnName="catalogAId" />
@@ -12,7 +12,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="catalogA">
-      <EntityTypeMapping TypeName="shop123Model.catalogA">
+      <EntityTypeMapping TypeName="shop123Model1.catalogA">
         <MappingFragment StoreEntitySet="catalogA">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="catalogAName" ColumnName="catalogAName" />
@@ -20,7 +20,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="catalogB">
-      <EntityTypeMapping TypeName="shop123Model.catalogB">
+      <EntityTypeMapping TypeName="shop123Model1.catalogB">
         <MappingFragment StoreEntitySet="catalogB">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="catalogBName" ColumnName="catalogBName" />
@@ -29,7 +29,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="comment">
-      <EntityTypeMapping TypeName="shop123Model.comment">
+      <EntityTypeMapping TypeName="shop123Model1.comment">
         <MappingFragment StoreEntitySet="comment">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="memberId" ColumnName="memberId" />
@@ -41,7 +41,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="delivery">
-      <EntityTypeMapping TypeName="shop123Model.delivery">
+      <EntityTypeMapping TypeName="shop123Model1.delivery">
         <MappingFragment StoreEntitySet="delivery">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="orderId" ColumnName="orderId" />
@@ -50,8 +50,64 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="favorite">
+      <EntityTypeMapping TypeName="shop123Model1.favorite">
+        <MappingFragment StoreEntitySet="favorite">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="spuId" ColumnName="spuId" />
+          <ScalarProperty Name="memberId" ColumnName="memberId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="member">
+      <EntityTypeMapping TypeName="shop123Model1.member">
+        <MappingFragment StoreEntitySet="member">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="memberAccount" ColumnName="memberAccount" />
+          <ScalarProperty Name="memberPassword" ColumnName="memberPassword" />
+          <ScalarProperty Name="memberName" ColumnName="memberName" />
+          <ScalarProperty Name="memberPhone" ColumnName="memberPhone" />
+          <ScalarProperty Name="memberEmail" ColumnName="memberEmail" />
+          <ScalarProperty Name="memberImg" ColumnName="memberImg" />
+          <ScalarProperty Name="memberBanned" ColumnName="memberBanned" />
+          <ScalarProperty Name="memberAccess" ColumnName="memberAccess" />
+          <ScalarProperty Name="memberCreateTime" ColumnName="memberCreateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orders">
+      <EntityTypeMapping TypeName="shop123Model1.orders">
+        <MappingFragment StoreEntitySet="orders">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="memberId" ColumnName="memberId" />
+          <ScalarProperty Name="deliveryId" ColumnName="deliveryId" />
+          <ScalarProperty Name="orderCreateTime" ColumnName="orderCreateTime" />
+          <ScalarProperty Name="orderPaymentTime" ColumnName="orderPaymentTime" />
+          <ScalarProperty Name="receiverName" ColumnName="receiverName" />
+          <ScalarProperty Name="receiverAddress" ColumnName="receiverAddress" />
+          <ScalarProperty Name="receiverEmail" ColumnName="receiverEmail" />
+          <ScalarProperty Name="receiverPhone" ColumnName="receiverPhone" />
+          <ScalarProperty Name="orderState" ColumnName="orderState" />
+          <ScalarProperty Name="totalPrice" ColumnName="totalPrice" />
+          <ScalarProperty Name="refundId" ColumnName="refundId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ordersDetail">
+      <EntityTypeMapping TypeName="shop123Model1.ordersDetail">
+        <MappingFragment StoreEntitySet="ordersDetail">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="orderId" ColumnName="orderId" />
+          <ScalarProperty Name="skuId" ColumnName="skuId" />
+          <ScalarProperty Name="orderDetailsize" ColumnName="orderDetailsize" />
+          <ScalarProperty Name="orderDetailcolor" ColumnName="orderDetailcolor" />
+          <ScalarProperty Name="orderDetailnum" ColumnName="orderDetailnum" />
+          <ScalarProperty Name="orderDetailprice" ColumnName="orderDetailprice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="refund">
-      <EntityTypeMapping TypeName="shop123Model.refund">
+      <EntityTypeMapping TypeName="shop123Model1.refund">
         <MappingFragment StoreEntitySet="refund">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="orderId" ColumnName="orderId" />
@@ -61,7 +117,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="sku">
-      <EntityTypeMapping TypeName="shop123Model.sku">
+      <EntityTypeMapping TypeName="shop123Model1.sku">
         <MappingFragment StoreEntitySet="sku">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="spuId" ColumnName="spuId" />
@@ -73,7 +129,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="spu">
-      <EntityTypeMapping TypeName="shop123Model.spu">
+      <EntityTypeMapping TypeName="shop123Model1.spu">
         <MappingFragment StoreEntitySet="spu">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="spuName" ColumnName="spuName" />
@@ -90,62 +146,6 @@
           <ScalarProperty Name="spuShow" ColumnName="spuShow" />
           <ScalarProperty Name="spuCreatedTime" ColumnName="spuCreatedTime" />
           <ScalarProperty Name="spuEditTime" ColumnName="spuEditTime" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="favorite">
-      <EntityTypeMapping TypeName="shop123Model.favorite">
-        <MappingFragment StoreEntitySet="favorite">
-          <ScalarProperty Name="memberId" ColumnName="memberId" />
-          <ScalarProperty Name="spuId" ColumnName="spuId" />
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="orders">
-      <EntityTypeMapping TypeName="shop123Model.orders">
-        <MappingFragment StoreEntitySet="orders">
-          <ScalarProperty Name="refundId" ColumnName="refundId" />
-          <ScalarProperty Name="totalPrice" ColumnName="totalPrice" />
-          <ScalarProperty Name="orderState" ColumnName="orderState" />
-          <ScalarProperty Name="receiverPhone" ColumnName="receiverPhone" />
-          <ScalarProperty Name="receiverEmail" ColumnName="receiverEmail" />
-          <ScalarProperty Name="receiverAddress" ColumnName="receiverAddress" />
-          <ScalarProperty Name="receiverName" ColumnName="receiverName" />
-          <ScalarProperty Name="orderPaymentTime" ColumnName="orderPaymentTime" />
-          <ScalarProperty Name="orderCreateTime" ColumnName="orderCreateTime" />
-          <ScalarProperty Name="deliveryId" ColumnName="deliveryId" />
-          <ScalarProperty Name="memberId" ColumnName="memberId" />
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ordersDetail">
-      <EntityTypeMapping TypeName="shop123Model.ordersDetail">
-        <MappingFragment StoreEntitySet="ordersDetail">
-          <ScalarProperty Name="orderDetailprice" ColumnName="orderDetailprice" />
-          <ScalarProperty Name="orderDetailnum" ColumnName="orderDetailnum" />
-          <ScalarProperty Name="orderDetailcolor" ColumnName="orderDetailcolor" />
-          <ScalarProperty Name="orderDetailsize" ColumnName="orderDetailsize" />
-          <ScalarProperty Name="skuId" ColumnName="skuId" />
-          <ScalarProperty Name="orderId" ColumnName="orderId" />
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="member">
-      <EntityTypeMapping TypeName="shop123Model.member">
-        <MappingFragment StoreEntitySet="member">
-          <ScalarProperty Name="memberCreateTime" ColumnName="memberCreateTime" />
-          <ScalarProperty Name="memberAccess" ColumnName="memberAccess" />
-          <ScalarProperty Name="memberBanned" ColumnName="memberBanned" />
-          <ScalarProperty Name="memberImg" ColumnName="memberImg" />
-          <ScalarProperty Name="memberEmail" ColumnName="memberEmail" />
-          <ScalarProperty Name="memberPhone" ColumnName="memberPhone" />
-          <ScalarProperty Name="memberName" ColumnName="memberName" />
-          <ScalarProperty Name="memberPassword" ColumnName="memberPassword" />
-          <ScalarProperty Name="memberAccount" ColumnName="memberAccount" />
-          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

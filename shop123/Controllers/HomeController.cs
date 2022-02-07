@@ -17,7 +17,7 @@ namespace shop123.Controllers
     {//首頁、分類頁、商品頁、使用者註冊登入、賣家首頁
         shop123Entities db = new shop123Entities();
 
-        int pageSize = 3;
+        int pageSize = 12;
 
         public ActionResult Allspu(int page = 1)
         {//所有產品分頁的頁面
@@ -75,9 +75,10 @@ namespace shop123.Controllers
             {
                 shop123Entities db = new shop123Entities();
                 spu Spu = db.spu.FirstOrDefault(p => p.id == id);
-
+                var Sku = db.sku.Where(p => p.spuId == id).ToList();
 
                 CDetailViewModel CDetail = new CDetailViewModel();
+                CDetail.Sku = Sku;
                 CDetail.Spu = Spu;
                 CDetail.Comments = db.comment.ToList();
                 //CDetail.Comments.Add(cmt);
@@ -131,7 +132,7 @@ namespace shop123.Controllers
                 memberPassword = em.memberPassword,
                 memberName = em.memberName,
                 memberEmail = em.memberEmail,
-                memberAccess = em.memberAccess,
+                memberAccess = em.memberAccess.ToString(),
                 memberPhone = em.memberPhone.ToString()
             };
 

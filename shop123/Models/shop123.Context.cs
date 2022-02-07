@@ -26,17 +26,16 @@ namespace shop123.Models
         }
     
         public virtual DbSet<carousel> carousel { get; set; }
-        public virtual DbSet<cart> cart { get; set; }
         public virtual DbSet<catalogA> catalogA { get; set; }
         public virtual DbSet<catalogB> catalogB { get; set; }
         public virtual DbSet<comment> comment { get; set; }
         public virtual DbSet<delivery> delivery { get; set; }
-        public virtual DbSet<like> like { get; set; }
-        public virtual DbSet<member> member { get; set; }
-        public virtual DbSet<order> order { get; set; }
-        public virtual DbSet<orderDetail> orderDetail { get; set; }
         public virtual DbSet<refund> refund { get; set; }
         public virtual DbSet<sku> sku { get; set; }
         public virtual DbSet<spu> spu { get; set; }
+        public virtual DbSet<favorite> favorite { get; set; }
+        public virtual DbSet<orders> orders { get; set; }
+        public virtual DbSet<ordersDetail> ordersDetail { get; set; }
+        public virtual DbSet<member> member { get; set; }
     }
 }

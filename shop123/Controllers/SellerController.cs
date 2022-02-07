@@ -17,7 +17,7 @@ namespace shop123.Controllers
         public ActionResult Seller()
         {
 
-            var seller = from p in (new Models.shop123Entities()).order select p;
+            var seller = from p in (new Models.shop123Entities()).orders select p;
             //var sku = from k in (new Models.shop123Entities()).sku select k;
             return View(seller);
         }

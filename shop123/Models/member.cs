@@ -22,7 +22,7 @@ namespace shop123.Models
         public string memberEmail { get; set; }
         public string memberImg { get; set; }
         public Nullable<bool> memberBanned { get; set; }
-        public int memberAccess { get; set; }
+        public string memberAccess { get; set; }
         public System.DateTime memberCreateTime { get; set; }
     }
 }
